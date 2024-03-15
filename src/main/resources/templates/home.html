@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{header}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="col col-6 mx-auto">
+<div th:insert="~{navbar}"></div>
+
+
+<table cellpadding="20px" >
+    <thead>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>SURNAME</th>
+    <th>EXAM</th>
+    <th>MARK</th>
+    </thead>
+    <tbody>
+    <tr th:each="student: ${pupil}"
+        th:class="${student.mark == 'F' ? 'text-danger' : 'text-dark'}">
+        <td th:text="${student.id}"> </td>
+        <td th:text="${student.name}"> </td>
+        <td th:text="${student.surname}"> </td>
+        <td th:text="${student.exam}"> </td>
+        <td th:text="${student.mark}"> </td>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
